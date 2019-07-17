@@ -1,0 +1,29 @@
+{
+  "name": "expressio-bot",
+  "version": "1.0.0",
+  "description": "A bot that tells you a French expression per day.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "backpack"
+  },
+  "keywords": [
+    "expressio",
+    "bot",
+    "telegram",
+    "french"
+  ],
+  "author": "yonmey@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "backpack-core": "^0.8.4",
+    "cheerio": "^1.0.0-rc.3",
+    "cron": "^1.7.1",
+    "messaging-api-telegram": "^0.7.11",
+    "superagent": "^5.1.0",
+    "telegraf": "^3.30.1"
+  },
+  "devDependencies": {
+    "standard": "^13.0.2"
+  }
+}
