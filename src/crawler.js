@@ -2,8 +2,6 @@ import superagent from 'superagent'
 import cheerio from 'cheerio'
 import c from './config'
 
-const getUrlContent = url => superagent.get(url)
-
 const getExpressionText = res => {
   const $ = cheerio.load(res.text)
   return $(c.expOfDay).find('a').attr('href')
@@ -25,13 +23,13 @@ const formatExpression = res => {
 }
 
 export default function getExpression () {
-  const expUrl = getUrlContent(c.url)
+  const expUrl = superagent.get(c.url)
     .then(getExpressionText)
     .catch(console.error)
 
   return expUrl
     .then(path =>
-      getUrlContent(`${c.url}${path}`)
+      superagent.get(`${c.url}${path}`)
         .then(formatExpression)
         .catch(console.error)
     )
