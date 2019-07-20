@@ -21,15 +21,13 @@ ${exp.example &&
 `
 
 export default function send () {
-  const client = TelegramClient.connect(
-    '862751093:AAGmA0Uwx4XVuqj3nxFcS2lIJJ-fPDIZ28M'
-  )
+  const client = TelegramClient.connect(process.env.BOT_TOKEN)
 
   getExpression().then(e => {
     client.sendMessage('-353258336', getHTMLTemplate(e), {
       parse_mode: 'HTML'
     }).then(() => {
-      console.log('sent')
+      console.log('Daily expression sent.')
     })
   })
 }
