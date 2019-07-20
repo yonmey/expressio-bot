@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "backpack"
+    "start": "node ./build/main.js",
+    "build": "backpack build",
+    "dev": "backpack"
   },
   "keywords": [
     "expressio",
