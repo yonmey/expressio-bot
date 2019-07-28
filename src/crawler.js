@@ -14,11 +14,19 @@ const formatExpression = res => {
   const origin = $(c.origin).length ? $(c.origin).text().trim() : ''
   const example = $(c.example).length ? $(c.example).text().trim() : '' // todo remove last br
 
+  const spa = $('#exp_ailleurs').find('a:contains("es")')
+  const ita = $('#exp_ailleurs').find('a:contains("it")')
+
+  const spaExpression = spa.length ? spa.map((_, s) => $(s).parent().next().text()).toArray().join(' / ') : ''
+  const itaExpression = ita.length ? ita.map((_, s) => $(s).parent().next().text()).toArray().join(' / ') : ''
+
   return {
     expression,
     meaning,
     origin,
-    example
+    example,
+    spaExpression,
+    itaExpression
   }
 }
 

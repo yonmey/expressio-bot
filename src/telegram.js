@@ -18,6 +18,16 @@ ${exp.example &&
 `<strong>Exemple :</strong>
 <i>${exp.example}</i>`
 }
+
+${exp.spaExpression &&
+`<strong>En español:</strong>
+<i>${exp.spaExpression}</i>`
+}
+
+${exp.itaExpression &&
+`<strong>In italiano:</strong>
+<i>${exp.itaExpression}</i>`
+}
 `
 
 export default function send () {
